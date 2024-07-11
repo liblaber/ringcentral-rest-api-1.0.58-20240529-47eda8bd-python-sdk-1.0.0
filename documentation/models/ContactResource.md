@@ -1,0 +1,73 @@
+# ContactResource
+
+**Properties**
+
+| Name             | Type                                 | Required | Description                                       |
+| :--------------- | :----------------------------------- | :------- | :------------------------------------------------ |
+| id\_             | str                                  | ✅       | Contact extension identifier                      |
+| type\_           | ContactResourceType                  | ❌       | Contact type                                      |
+| status           | ContactResourceStatus                | ❌       | Contact status                                    |
+| account          | AccountResource                      | ❌       |                                                   |
+| department       | str                                  | ❌       |                                                   |
+| email            | str                                  | ❌       |                                                   |
+| extension_number | str                                  | ❌       |                                                   |
+| first_name       | str                                  | ❌       | First name of a contact, for user extensions only |
+| last_name        | str                                  | ❌       | Last name of a contact, for user extensions only  |
+| name             | str                                  | ❌       | Name of a contact, for non-user extensions        |
+| job_title        | str                                  | ❌       |                                                   |
+| phone_numbers    | List[PhoneNumberResource]            | ❌       |                                                   |
+| profile_image    | AccountDirectoryProfileImageResource | ❌       |                                                   |
+| site             | BusinessSiteResource                 | ❌       |                                                   |
+| hidden           | bool                                 | ❌       |                                                   |
+| role             | DirectoryRoleResource                | ❌       |                                                   |
+| call_queues      | List[CallQueueResource]              | ❌       |                                                   |
+| custom_fields    | List[CustomFieldResource]            | ❌       |                                                   |
+| groups           | List[GroupResource]                  | ❌       |                                                   |
+| cost_center      | CostCenterResource                   | ❌       |                                                   |
+| integration      | ExternalIntegrationResource          | ❌       |                                                   |
+| sub_type         | ContactSubTypeEnum                   | ❌       | Extension subtype                                 |
+
+# ContactResourceType
+
+Contact type
+
+**Properties**
+
+| Name                 | Type | Required | Description            |
+| :------------------- | :--- | :------- | :--------------------- |
+| USER                 | str  | ✅       | "User"                 |
+| DEPARTMENT           | str  | ✅       | "Department"           |
+| ANNOUNCEMENT         | str  | ✅       | "Announcement"         |
+| VOICEMAIL            | str  | ✅       | "Voicemail"            |
+| SHAREDLINESGROUP     | str  | ✅       | "SharedLinesGroup"     |
+| PAGINGONLY           | str  | ✅       | "PagingOnly"           |
+| PARKLOCATION         | str  | ✅       | "ParkLocation"         |
+| IVRMENU              | str  | ✅       | "IvrMenu"              |
+| LIMITED              | str  | ✅       | "Limited"              |
+| APPLICATIONEXTENSION | str  | ✅       | "ApplicationExtension" |
+| SITE                 | str  | ✅       | "Site"                 |
+| BOT                  | str  | ✅       | "Bot"                  |
+| ROOM                 | str  | ✅       | "Room"                 |
+| PROXYADMIN           | str  | ✅       | "ProxyAdmin"           |
+| DELEGATEDLINESGROUP  | str  | ✅       | "DelegatedLinesGroup"  |
+| GROUPCALLPICKUP      | str  | ✅       | "GroupCallPickup"      |
+| EXTERNAL             | str  | ✅       | "External"             |
+| ROOMCONNECTOR        | str  | ✅       | "RoomConnector"        |
+| UNKNOWN              | str  | ✅       | "Unknown"              |
+
+# ContactResourceStatus
+
+Contact status
+
+**Properties**
+
+| Name         | Type | Required | Description    |
+| :----------- | :--- | :------- | :------------- |
+| ENABLED      | str  | ✅       | "Enabled"      |
+| DISABLED     | str  | ✅       | "Disabled"     |
+| FROZEN       | str  | ✅       | "Frozen"       |
+| NOTACTIVATED | str  | ✅       | "NotActivated" |
+| UNASSIGNED   | str  | ✅       | "Unassigned"   |
+| UNKNOWN      | str  | ✅       | "Unknown"      |
+
+<!-- This file was generated by liblab | https://liblab.com/ -->

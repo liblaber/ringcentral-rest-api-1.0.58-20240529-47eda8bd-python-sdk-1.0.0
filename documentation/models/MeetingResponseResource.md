@@ -1,0 +1,63 @@
+# MeetingResponseResource
+
+**Properties**
+
+| Name                       | Type                                      | Required | Description                                                         |
+| :------------------------- | :---------------------------------------- | :------- | :------------------------------------------------------------------ |
+| uri                        | str                                       | ❌       | Link to a meeting resource                                          |
+| uuid                       | str                                       | ❌       | Universally unique identifier of a meeting"                         |
+| id\_                       | str                                       | ❌       | Internal identifier of a meeting                                    |
+| topic                      | str                                       | ❌       | Custom topic of a meeting                                           |
+| meeting_type               | MeetingResponseResourceMeetingType        | ❌       |                                                                     |
+| password                   | str                                       | ❌       | Meeting password                                                    |
+| h323_password              | str                                       | ❌       |                                                                     |
+| status                     | str                                       | ❌       | Status of a meeting                                                 |
+| links                      | MeetingLinks                              | ❌       | Meeting links                                                       |
+| schedule                   | MeetingScheduleResource                   | ❌       | Timing of a meeting                                                 |
+| host                       | HostInfoRequest                           | ❌       | Meeting host information                                            |
+| allow_join_before_host     | bool                                      | ❌       | If true, then participants can join the meeting before host arrives |
+| start_host_video           | bool                                      | ❌       | Starting meetings with host video on/off (true/false)               |
+| start_participants_video   | bool                                      | ❌       | Starting meetings with participant video on/off (true/false)        |
+| audio_options              | List[MeetingResponseResourceAudioOptions] | ❌       |                                                                     |
+| recurrence                 | RecurrenceInfo                            | ❌       |                                                                     |
+| auto_record_type           | MeetingResponseResourceAutoRecordType     | ❌       | Automatic record type                                               |
+| enforce_login              | bool                                      | ❌       | If true, then only signed-in users can join this meeting            |
+| mute_participants_on_entry | bool                                      | ❌       | If true, then participants are muted on entry                       |
+| occurrences                | List[MeetingOccurrenceInfo]               | ❌       |                                                                     |
+| enable_waiting_room        | bool                                      | ❌       | If true, then the waiting room for participants is enabled          |
+| global_dial_in_countries   | List[str]                                 | ❌       | List of global dial-in countries (eg. US, UK, AU, etc.)             |
+| alternative_hosts          | str                                       | ❌       |                                                                     |
+
+# MeetingResponseResourceMeetingType
+
+**Properties**
+
+| Name               | Type | Required | Description          |
+| :----------------- | :--- | :------- | :------------------- |
+| INSTANT            | str  | ✅       | "Instant"            |
+| SCHEDULED          | str  | ✅       | "Scheduled"          |
+| SCHEDULEDRECURRING | str  | ✅       | "ScheduledRecurring" |
+| RECURRING          | str  | ✅       | "Recurring"          |
+
+# MeetingResponseResourceAudioOptions
+
+**Properties**
+
+| Name          | Type | Required | Description     |
+| :------------ | :--- | :------- | :-------------- |
+| PHONE         | str  | ✅       | "Phone"         |
+| COMPUTERAUDIO | str  | ✅       | "ComputerAudio" |
+
+# MeetingResponseResourceAutoRecordType
+
+Automatic record type
+
+**Properties**
+
+| Name  | Type | Required | Description |
+| :---- | :--- | :------- | :---------- |
+| LOCAL | str  | ✅       | "local"     |
+| CLOUD | str  | ✅       | "cloud"     |
+| NONE  | str  | ✅       | "none"      |
+
+<!-- This file was generated by liblab | https://liblab.com/ -->

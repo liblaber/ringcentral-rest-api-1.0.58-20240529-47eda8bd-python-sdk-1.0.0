@@ -1,0 +1,32 @@
+# SessionResource
+
+**Properties**
+
+| Name                     | Type                                | Required | Description                                                                                                                                                       |
+| :----------------------- | :---------------------------------- | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| creation_time            | str                                 | ✅       | Object creation time                                                                                                                                              |
+| last_modified_time       | str                                 | ✅       | Object last modification time                                                                                                                                     |
+| id\_                     | str                                 | ❌       | Internal object ID                                                                                                                                                |
+| start_time               | str                                 | ❌       | Session start time. If a session hasn't been started this fields should be set to "scheduledStartTime"                                                            |
+| end_time                 | str                                 | ❌       | Session end time. If a session hasn't been finished this fields should be set to ("startTime"+"scheduledDuration")                                                |
+| duration                 | int                                 | ❌       | Session duration in seconds rounded up (returned if 'startTime' and 'endTime' are not empty)                                                                      |
+| title                    | str                                 | ❌       | Session title. If blank - derived from webinar title.                                                                                                             |
+| description              | str                                 | ❌       | User-friendly description of the Session. If blank - derived from webinar title.                                                                                  |
+| scheduled_start_time     | str                                 | ❌       | Session scheduled start time.                                                                                                                                     |
+| scheduled_duration       | int                                 | ❌       | The scheduled duration of the Session in seconds.                                                                                                                 |
+| time_zone                | str                                 | ❌       | IANA-compatible time zone name (see https://www.iana.org/time-zones).                                                                                             |
+| locale_code              | str                                 | ❌       | Session locale code. Can't be blank or null.                                                                                                                      |
+| panel_join_time_offset   | int                                 | ❌       | The time offset (positive, in seconds) indicating how much in advance (comparing to "scheduledStartTime") panel members should join for the pre-webinar team sync |
+| broadcasting_start_time  | str                                 | ❌       | The time when broadcasting started.                                                                                                                               |
+| broadcasting_end_time    | str                                 | ❌       | The time when broadcasting ended.                                                                                                                                 |
+| status                   | RcwSessionStatusModel               | ❌       | Webinar session status                                                                                                                                            |
+| runtime_status           | SessionRuntimeStatusModel           | ❌       | Session runtime status (for 'Active' Sessions only). It is omitted (or null) if the status is not Active                                                          |
+| participant_count        | int                                 | ❌       | The number of participants (of all roles) who joined the webinar                                                                                                  |
+| attendee_count           | int                                 | ❌       | The number of attendees who joined the webinar                                                                                                                    |
+| unique_participant_count | int                                 | ❌       | Unique number of participants (of all roles) who joined the webinar                                                                                               |
+| unique_attendee_count    | int                                 | ❌       | Unique number of attendees who joined the webinar                                                                                                                 |
+| video_bridge_id          | str                                 | ❌       | The RCV bridge id                                                                                                                                                 |
+| recording                | RecordingExtendedModel              | ❌       |                                                                                                                                                                   |
+| livestreams              | List[SessionLivestreamMinimalModel] | ❌       | The list of livestreams configured for the session                                                                                                                |
+
+<!-- This file was generated by liblab | https://liblab.com/ -->
